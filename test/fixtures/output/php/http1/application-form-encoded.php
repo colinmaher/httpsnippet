@@ -11,7 +11,8 @@ $request->setHeaders(array(
 $request->setContentType('application/x-www-form-urlencoded');
 $request->setPostFields(array(
   'foo' => 'bar',
-  'hello' => 'world'
+  'hello' => 'world',
+  'hello world' => 'world hello'
 ));
 
 try {

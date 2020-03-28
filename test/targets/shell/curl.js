@@ -43,4 +43,13 @@ module.exports = function (HTTPSnippet, fixtures) {
     result.should.be.a.String()
     result.replace(/\\\n/g, '').should.eql("curl --request POST @--url 'http://mockbin.com/har?foo=bar&foo=baz&baz=abc&key=value' @--header 'accept: application/json' @--header 'content-type: application/x-www-form-urlencoded' @--cookie 'foo=bar; bar=baz' @--data foo=bar")
   })
+
+  it('should URL encode application/x-www-form-urlencoded params', function () {
+    var result = new HTTPSnippet(fixtures.requests['application-form-encoded']).convert('shell', 'curl', {
+      indent: false
+    })
+
+    result.should.be.a.String()
+    result.replace(/\\\n/g, '').should.eql("curl --request POST --url http://mockbin.com/har --header 'content-type: application/x-www-form-urlencoded' --data foo=bar --data hello=world --data hello%20world=world%20hello")
+  })
 }

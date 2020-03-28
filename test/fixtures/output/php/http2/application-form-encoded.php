@@ -6,7 +6,8 @@ $request = new http\Client\Request;
 $body = new http\Message\Body;
 $body->append(new http\QueryString(array(
   'foo' => 'bar',
-  'hello' => 'world'
+  'hello' => 'world',
+  'hello world' => 'world hello'
 )));
 
 $request->setRequestUrl('http://mockbin.com/har');

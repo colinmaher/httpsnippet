@@ -2,7 +2,7 @@ library(httr)
 
 url <- "http://mockbin.com/har"
 
-payload <- "foo=bar&hello=world"
+payload <- "foo=bar&hello=world&hello%20world=world%20hello"
 
 encode <- "form"
 

@@ -8,7 +8,8 @@ req.headers({
 
 req.form({
   "foo": "bar",
-  "hello": "world"
+  "hello": "world",
+  "hello world": "world hello"
 });
 
 req.end(function (res) {

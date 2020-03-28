@@ -89,6 +89,6 @@ module.exports = function (HTTPSnippet, fixtures) {
     })
 
     result.should.be.a.String()
-    result.replace(/\\\n/g, '').should.eql('http -f POST http://mockbin.com/har content-type:application/x-www-form-urlencoded foo=bar hello=world')
+    result.replace(/\\\n/g, '').should.eql('http -f POST http://mockbin.com/har content-type:application/x-www-form-urlencoded foo=bar hello=world hello%20world=\'world hello\'')
   })
 }

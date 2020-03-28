@@ -11,7 +11,7 @@ func main() {
 
 	url := "http://mockbin.com/har"
 
-	payload := strings.NewReader("foo=bar&hello=world")
+	payload := strings.NewReader("foo=bar&hello=world&hello%20world=world%20hello")
 
 	req, _ := http.NewRequest("POST", url, payload)
 

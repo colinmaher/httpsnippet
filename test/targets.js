@@ -77,8 +77,12 @@ var itShouldGenerateOutput = function (request, path, target, client) {
       this.skip()
     }
     var instance = new HTTPSnippet(fixtures.requests[request])
-    var result = instance.convert(target, client) + '\n'
-
+    var result = instance.convert(target, client)
+    if (target === 'http' && request === 'application-form-encoded') {
+      result += '\r\n'
+    } else {
+      result += '\n'
+    }
     result.should.be.a.String()
     result.should.equal(output[fixture].toString())
   })

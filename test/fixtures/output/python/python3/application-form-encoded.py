@@ -2,7 +2,7 @@ import http.client
 
 conn = http.client.HTTPConnection("mockbin.com")
 
-payload = "foo=bar&hello=world"
+payload = "foo=bar&hello=world&hello%20world=world%20hello"
 
 headers = { 'content-type': "application/x-www-form-urlencoded" }
 

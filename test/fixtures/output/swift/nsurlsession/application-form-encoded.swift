@@ -4,6 +4,7 @@ let headers = ["content-type": "application/x-www-form-urlencoded"]
 
 let postData = NSMutableData(data: "foo=bar".data(using: String.Encoding.utf8)!)
 postData.append("&hello=world".data(using: String.Encoding.utf8)!)
+postData.append("&hello world=world hello".data(using: String.Encoding.utf8)!)
 
 let request = NSMutableURLRequest(url: NSURL(string: "http://mockbin.com/har")! as URL,
                                         cachePolicy: .useProtocolCachePolicy,

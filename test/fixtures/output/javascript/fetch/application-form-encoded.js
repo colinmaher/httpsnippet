@@ -5,7 +5,8 @@ fetch("http://mockbin.com/har", {
   },
   "body": {
     "foo": "bar",
-    "hello": "world"
+    "hello": "world",
+    "hello world": "world hello"
   }
 })
 .then(response => {

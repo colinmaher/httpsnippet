@@ -1,4 +1,4 @@
-var data = "foo=bar&hello=world";
+var data = "foo=bar&hello=world&hello%20world=world%20hello";
 
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;

@@ -99,7 +99,7 @@ module.exports = function (source, options) {
       flags.push(opts.short ? '-f' : '--form')
 
       source.postData.params.forEach(function (param) {
-        code.push('%s=%s', param.name, shell.quote(param.value))
+        code.push('%s=%s', encodeURIComponent(param.name), shell.quote(param.value))
       })
     }
   } else {

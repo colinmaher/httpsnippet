@@ -24,7 +24,7 @@ module.exports = function (source, options) {
   var code = new CodeBuilder(opts.indent, opts.indent !== false ? ' \\\n' + opts.indent : ' ')
 
   code.push('curl %s %s', opts.short ? '-X' : '--request', source.method)
-      .push(util.format('%s%s', opts.short ? '' : '--url ', helpers.quote(source.fullUrl)))
+    .push(util.format('%s%s', opts.short ? '' : '--url ', helpers.quote(source.fullUrl)))
 
   if (source.httpVersion === 'HTTP/1.0') {
     code.push(opts.short ? '-0' : '--http1.0')
@@ -59,7 +59,7 @@ module.exports = function (source, options) {
         source.postData.params.map(function (param) {
           code.push(
             '%s %s', opts.binary ? '--data-binary' : (opts.short ? '-d' : '--data'),
-            helpers.quote(util.format('%s=%s', param.name, param.value))
+            helpers.quote(util.format('%s=%s', encodeURIComponent(param.name), encodeURIComponent(param.value)))
           )
         })
       } else {
